@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Syllable</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<script>
+		function speak(word){
+			var msg = new SpeechSynthesisUtterance(word);
+			msg.lang="ro-RO";
+			window.speechSynthesis.speak(msg);
+		}
+	</script>
+	<style>
+		body{
+			/* padding: 0 !important;
+			margin: 0 !important; */
+			/* background: #FFA17F;  /* fallback for old browsers */ */
+			/* background: -webkit-linear-gradient(to right, #00223E, #FFA17F);  /* Chrome 10-25, Safari 5.1-6 */ */
+			/* background: linear-gradient(to right, #00223E, #FFA17F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
+
+		}
+	</style>
+	<!-- A grey horizontal navbar that becomes vertical on small screens -->
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#">Syllable Analyzer</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{url_for('home')}}">Home</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<br />
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3 col-lg-3 col-sm-12">
+				{% if output %}
+				<!-- <div class="container"> -->
+					<div class="row">
+						<div class="col-md-9"><p>Result: <span class="badge badge-success">{{output}}</span></p></div>
+						<div class="col-md-3">
+							<a class="card-link" href="#" onclick="speak('{{word}}');">Speak</a>
+						</div>
+					</div>
+				<!-- </div> -->
+				{% endif %}
+				{% if error %}
+				<!-- <div class="container"> -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="text text-danger">
+								<p>Error: <span class="badge badge-danger">{{error}}</span></p>
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
+				{% endif %}
+
+				<!-- <div class="row"> -->
+					<!-- <div class="col-md-4"> -->
+						<div class="card shadow p-1 mb-1 bg-white rounded">
+							<div class="card-body">
+								<h5 class="card-title">Convert word to syllable.</h5>
+								<form class="form" action="{{url_for('process_word')}}" method="POST">
+									<div class="form-group">
+										<input id="word" type="text" name="word" class="form-control mb-2 mr-sm-2" id="word" value="{{word}}" placeholder="Enter a word" required>
+									</div>
+									<button type="submit" class="btn btn-primary">Analyze</button>
+								</form>
+							</div>
+						</div>
+					<!-- </div> -->
+
+					<!-- <div class="col-md-4"> -->
+						<div class="card shadow p-1 mb-1 bg-white rounded">
+							<div class="card-body">
+								<h5 class="card-title">Add word to database</h5>
+								<form class="form" action="{{url_for('process_word')}}" method="POST">
+									<div class="form-group">
+										<input id="word_add" type="text" name="word" class="form-control mb-2 mr-sm-2" placeholder="Enter a word" required>
+										<input id="word_add_hidden" type="hidden" name="add_word" value="add_word" class="form-control mb-2 mr-sm-2" required>
+									</div>
+									<button type="submit" class="btn btn-primary">Add Word</button>
+								</form>
+							</div>
+						</div>
+					<!-- </div> -->
+				<!-- </div> -->
+			</div>
+
+			<div class="col-md-8 col-lg-8 col-sm-12" style="overflow:auto;">
+				<div class="container">
+					{% with messages = get_flashed_messages(with_categories=true) %}
+					<!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
+					{% if messages %}
+					{% for category, message in messages %}
+					<div class="alert alert-{{category}} alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<!-- <strong>Title</strong> --> {{ message }}
+					</div>
+					{% endfor %}
+					{% endif %}
+					{% endwith %}
+				</div>
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="container">
+	{% if error %}
+	<div class="row">
+		<div class="col-md-12">
+			<div class="alert alert-danger">
+				{{error}}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Word</th>
+				<th>Syllable</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for obj in objects %}
+			<tr>
+				<td>{{obj.word}}</td>
+				<td>{{obj.syllable}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}
