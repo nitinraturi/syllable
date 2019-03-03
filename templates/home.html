@@ -6,7 +6,7 @@
 <div class="container">
 	<h4>WordList</h4>
 	<div class="table-responsive">
-		<table class="table table-hover table-sm">
+		<table class="table table-hover table-sm table-borderless">
 			<thead>
 				<tr>
 					<th>Word</th>
@@ -17,8 +17,8 @@
 			<tbody>
 				{% for obj in objects %}
 				<tr>
-					<td>{{obj.word}}</td>
-					<td>{{obj.syllable}}</td>
+					<td style="color:white;font-weight:bolder;">{{obj.word}}</td>
+					<td> <span class="badge badge-info">{{obj.syllable}}</span></td>
 					<td><a href="#" class="card-link" onclick="speak('{{obj.word}}');">Speak</a></td>
 				</tr>
 				{% endfor %}

@@ -1,0 +1,37 @@
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:3007/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 148-690-845
+203.92.32.253 - - [02/Mar/2019 13:38:31] "GET /?word=examen&output=e%C2%A0%E2%80%A2%C2%A0x%C3%A1%C2%A0%E2%80%A2%C2%A0men HTTP/1.1" 200 -
+64.233.173.53 - - [02/Mar/2019 13:40:46] "GET / HTTP/1.1" 200 -
+64.233.173.51 - - [02/Mar/2019 13:40:47] "GET /favicon.ico HTTP/1.1" 404 -
+64.233.173.51 - - [02/Mar/2019 13:40:49] "GET / HTTP/1.1" 200 -
+64.233.173.51 - - [02/Mar/2019 13:40:55] "GET / HTTP/1.1" 200 -
+64.233.173.51 - - [02/Mar/2019 13:55:08] "GET / HTTP/1.1" 200 -
+64.233.173.51 - - [02/Mar/2019 13:55:09] "GET /favicon.ico HTTP/1.1" 404 -
+64.233.173.51 - - [02/Mar/2019 14:07:19] "GET /favicon.ico HTTP/1.1" 404 -
+122.161.182.38 - - [02/Mar/2019 15:11:00] "GET / HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:11:04] "GET /favicon.ico HTTP/1.1" 404 -
+122.161.182.38 - - [02/Mar/2019 15:22:03] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:22:04] "GET /?word=dreptunghi&output=drept%C2%A0%E2%80%A2%C2%A0%C3%BAnghi HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:23:16] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:23:16] "GET /?word=abcdef&error=Cuv%C3%A2ntul+nu+a+fost+g%C4%83sit%2C+%C3%AEncerca%C8%9Bi+altul HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:23:56] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:23:56] "GET /?word=dreptunghi&output=drept%C2%A0%E2%80%A2%C2%A0%C3%BAnghi HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:24:13] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:24:13] "GET /?word=canion&output=ca%C2%A0%E2%80%A2%C2%A0ni%C3%B3n HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:24:27] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:24:27] "GET /?word=v%C3%A2rstnic&output=v%E1%BA%A5r%C2%A0%E2%80%A2%C2%A0stnic HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:24:38] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:24:38] "GET /?word=v%C3%A2rstnic&output=v%E1%BA%A5r%C2%A0%E2%80%A2%C2%A0stnic HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:24:51] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:24:52] "GET /?word=geometrie&output=ge%C2%A0%E2%80%A2%C2%A0o%C2%A0%E2%80%A2%C2%A0me%C2%A0%E2%80%A2%C2%A0tr%C3%AD%C2%A0%E2%80%A2%C2%A0e HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:25:55] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:25:56] "GET /?word=seif&output=seif HTTP/1.1" 200 -
+122.161.182.38 - - [02/Mar/2019 15:30:37] "POST /process HTTP/1.1" 302 -
+122.161.182.38 - - [02/Mar/2019 15:30:38] "GET /?word=v%C3%A2rstnic&output=v%E1%BA%A5r%C2%A0%E2%80%A2%C2%A0stnic HTTP/1.1" 200 -

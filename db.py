@@ -11,13 +11,14 @@ Base = declarative_base()
 class Syllables(Base):
     ''' This Class Contains all of the users '''
     __tablename__ = 'syllables'
-    word = Column(String(80), nullable= False,primary_key= True)
-    syllable = Column(String(80), nullable= False)
+    word = Column(String(255), nullable= False,primary_key= True)
+    syllable = Column(String(255), nullable= False)
+    mysql_charset='utf8mb4'
 
 
 def get_engine():
     # return create_engine('sqlite:///sylable.db')
-    return create_engine('mysql://{0}:{1}@{2}/{3}?charset=utf8'.format(db_user,db_pass,db_host,db_name))
+    return create_engine('mysql://{0}:{1}@{2}/{3}?charset=utf8mb4'.format(db_user,db_pass,db_host,db_name), pool_recycle=3600)
 
 def get_session():
     Base.metadata.bind = get_engine()

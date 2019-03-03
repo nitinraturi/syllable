@@ -18,6 +18,8 @@ def home():
 def process_word():
 	word = request.form.get('word')
 	add_word = request.form.get('add_word')
+	output = None
+	error = None
 	if word and len(word.strip())>0:
 		word = word.strip()
 		output,error = get_syllable_for_word(word)
@@ -59,6 +61,7 @@ def get_syllable_for_word(word):
 		if len(outputs)>0:
 			output = outputs[0].get_text()
 			output = output.split('=')
+			print(output)
 			if len(output)>0:
 				word = output[0].strip()
 				output = output[1].strip()
